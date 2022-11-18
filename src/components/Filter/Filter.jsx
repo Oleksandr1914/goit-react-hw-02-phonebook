@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FilterInput } from './FilterList';
 
 class Filter extends Component {
   state = {
@@ -17,7 +18,7 @@ class Filter extends Component {
     return (
       <>
         <h3>Find contcts by name</h3>
-        <input
+        <FilterInput
           type="text"
           name="filter"
           value={this.state.filter}

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-import { Form } from './ContactFormStyled';
-import { Label } from './ContactFormStyled';
-import { Input } from './ContactFormStyled';
+import { Form, Label, Input, BtnSubmit } from './ContactFormStyled';
 
 class PhonebookContact extends Component {
   state = {
@@ -73,7 +71,7 @@ class PhonebookContact extends Component {
               onChange={this.onInputText}
             />
           </Label>
-          <button type="submit">Add contact</button>
+          <BtnSubmit type="submit">Add contact</BtnSubmit>
         </Form>
       </>
     );

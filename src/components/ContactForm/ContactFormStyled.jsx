@@ -19,3 +19,8 @@ export const Input = styled.input`
   width: 250px;
   font-size: 18px;
 `;
+
+export const BtnSubmit = styled.button`
+  padding: 6px 12px;
+  font-size: 16px;
+`;

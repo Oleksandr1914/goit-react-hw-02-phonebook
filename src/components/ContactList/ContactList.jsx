@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { BlockItem, BtnDelete, SpanName } from './ContactListStyled';
 
 class ContactList extends Component {
   contactsList = () => {
@@ -7,19 +8,19 @@ class ContactList extends Component {
     const arrListCont = objProps.contacts
       .filter(el => el.name.toLowerCase().includes(objProps.filter))
       .map(el => (
-        <div key={el.id}>
+        <BlockItem key={el.id}>
           <li>
-            <span>{el.name}: </span>
-            <span>{el.number}</span>
+            <SpanName>{el.name}: </SpanName>
+            <SpanName>{el.number}</SpanName>
           </li>
-          <button
+          <BtnDelete
             type="click"
             name={el.id}
             onClick={() => this.props.onClickBtn(el.id)}
           >
             Delete
-          </button>
-        </div>
+          </BtnDelete>
+        </BlockItem>
       ));
     return arrListCont;
   };
