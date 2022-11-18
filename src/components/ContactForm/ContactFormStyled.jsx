@@ -11,7 +11,7 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   display: flex;
-  font-size: 18px;
+  font-size: 19px;
   justify-content: space-between;
 `;
 
