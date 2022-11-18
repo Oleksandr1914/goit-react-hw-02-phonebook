@@ -4,26 +4,26 @@ import PropTypes from 'prop-types';
 class ContactList extends Component {
   contactsList = () => {
     const objProps = this.props.onContact;
-    return objProps.contacts.map(el => {
-      if (el.name.toLowerCase().includes(objProps.filter)) {
-        return (
-          <div key={el.id}>
-            <li>
-              <span>{el.name}: </span>
-              <span>{el.number}</span>
-            </li>
-            <button
-              type="click"
-              name={el.id}
-              onClick={() => this.props.onClickBtn(el.id)}
-            >
-              Delete
-            </button>
-          </div>
-        );
-      }
-    });
+    const arrListCont = objProps.contacts
+      .filter(el => el.name.toLowerCase().includes(objProps.filter))
+      .map(el => (
+        <div key={el.id}>
+          <li>
+            <span>{el.name}: </span>
+            <span>{el.number}</span>
+          </li>
+          <button
+            type="click"
+            name={el.id}
+            onClick={() => this.props.onClickBtn(el.id)}
+          >
+            Delete
+          </button>
+        </div>
+      ));
+    return arrListCont;
   };
+
   render() {
     return (
       <>
