@@ -17,7 +17,7 @@ class App extends Component {
 
   onInputFilter = data => {
     this.setState({
-      filter: data.filter,
+      [data.currentTarget.name]: data.currentTarget.value,
     });
   };
 
@@ -41,7 +41,7 @@ class App extends Component {
           onSubmit={this.onSubmit}
           phoneContacts={this.state.contacts}
         />
-        <Filter onFilter={this.onInputFilter} />
+        <Filter onFilter={this.onInputFilter} FilterState={this.state.filter} />
         <h2>Contacts</h2>
         <ContactList onContact={this.state} onClickBtn={this.onClickDelete} />
       </Container>

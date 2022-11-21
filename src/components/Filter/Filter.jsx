@@ -3,17 +3,6 @@ import PropTypes from 'prop-types';
 import { FilterInput } from './FilterList';
 
 class Filter extends Component {
-  state = {
-    filter: '',
-  };
-
-  onInputText = event => {
-    this.setState({
-      [event.currentTarget.name]: event.currentTarget.value,
-    });
-    this.setState(prevState => this.props.onFilter(prevState));
-  };
-
   render() {
     return (
       <>
@@ -21,8 +10,8 @@ class Filter extends Component {
         <FilterInput
           type="text"
           name="filter"
-          value={this.state.filter}
-          onChange={this.onInputText}
+          value={this.props.FilterInput}
+          onChange={this.props.onFilter}
         />
       </>
     );
@@ -31,6 +20,7 @@ class Filter extends Component {
 
 Filter.propTypes = {
   onFilter: PropTypes.func.isRequired,
+  FilterInput: PropTypes.string,
 };
 
 export default Filter;
